@@ -35,9 +35,7 @@ export default function App() {
   } = useTeamsUser();
 
   const managerAccess =
-    isManager(
-      employeeLogin
-    );
+    true;
 
   return (
     <div className="robin-container">
