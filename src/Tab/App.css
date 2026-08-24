@@ -1,0 +1,180 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #f5f6fa;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.robin-container {
+  padding: 24px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.header h1 {
+  margin: 0;
+  color: #2b579a;
+}
+
+.header p {
+  margin-top: 5px;
+  color: #666;
+}
+
+.welcome-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(220px, 1fr)
+  );
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+
+.card h3 {
+  margin: 0;
+  color: #666;
+}
+
+.value {
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #2b579a;
+}
+
+.compliance-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.status-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.actions {
+  margin-top: 20px;
+}
+
+button {
+  background: #2b579a;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1f4577;
+}
+
+.navbar {
+  display: flex;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.navbar button {
+  background: #2b579a;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.filter-bar {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.filter-bar button {
+  background: #dbe2f0;
+  color: #2b579a;
+}
+
+.filter-bar button:hover {
+  background: #c7d3eb;
+}
+
+.filter-active {
+  background: #2b579a !important;
+  color: white !important;
+}
+
+.entry-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.entry-row:last-child {
+  border-bottom: none;
+}
+
+.delete-btn {
+  background: #d13438;
+  color: white;
+}
+
+.delete-btn:hover {
+  background: #a4262c;
+}
+
+.entry-details {
+  flex: 1;
+}
+
+.entry-hours {
+  font-weight: bold;
+  color: #2b579a;
+  min-width: 70px;
+  text-align: center;
+}
+
+.section-title {
+  margin-bottom: 15px;
+  color: #2b579a;
+}
