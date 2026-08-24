@@ -1,4 +1,4 @@
-import useTeamsUser from "../hooks/useTeamsUser";
+import useBetaUser from "../hooks/useBetaUser";
 
 export default function UserDebug() {
   const {
@@ -6,7 +6,7 @@ export default function UserDebug() {
     employeeLogin,
     isLoadingUser,
     userError,
-  } = useTeamsUser();
+  } = useBetaUser();
 
   return (
     <div className="compliance-card">

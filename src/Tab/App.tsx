@@ -11,8 +11,7 @@ import EmployeeUtilization from "./pages/EmployeeUtilization";
 import ComplianceDashboard from "./pages/ComplianceDashboard";
 import OTContributionReport from "./pages/OTContributionReport";
 
-import useTeamsUser from "./hooks/useTeamsUser";
-import { isManager } from "./services/RoleService";
+import useBetaUser from "./hooks/useBetaUser";
 
 type PageType =
   | "dashboard"
@@ -31,11 +30,11 @@ export default function App() {
     );
 
   const {
-    employeeLogin,
-  } = useTeamsUser();
+    employeeName,
+  } = useBetaUser();
 
-  const managerAccess =
-    true;
+  // Enable manager pages during beta testing
+  const managerAccess = true;
 
   return (
     <div className="robin-container">
@@ -45,6 +44,12 @@ export default function App() {
         <p>
           From Site to Dashboard
         </p>
+
+        {employeeName && (
+          <small>
+            {employeeName}
+          </small>
+        )}
       </div>
 
       <div className="navbar">

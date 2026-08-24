@@ -9,8 +9,6 @@ export default function useBetaUser() {
   const {
     employeeName,
     employeeLogin,
-    isLoadingUser,
-    userError,
   } = useTeamsUser();
 
   const [
@@ -75,8 +73,7 @@ export default function useBetaUser() {
     employeeName:
       displayName,
     employeeLogin,
-    isLoadingUser:
-      false,
+    isLoadingUser: false,
     userError: "",
   };
 }

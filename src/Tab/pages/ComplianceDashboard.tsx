@@ -3,7 +3,7 @@ import {
   useState,
 } from "react";
 
-import useTeamsUser from "../hooks/useTeamsUser";
+import useBetaUser from "../hooks/useBetaUser";
 
 import ComplianceScore from "../components/ComplianceScore";
 import ComplianceForm from "../components/ComplianceForm";
@@ -38,7 +38,7 @@ type SafetyWalkStatus =
 export default function ComplianceDashboard() {
   const {
     employeeName,
-  } = useTeamsUser();
+  } = useBetaUser();
 
   const [
     timesheetStatus,

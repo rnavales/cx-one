@@ -2,7 +2,7 @@ import {
   useState,
 } from "react";
 
-import useTeamsUser from "../hooks/useTeamsUser";
+import useBetaUser from "../hooks/useBetaUser";
 
 import {
   getGraphAccessToken,
@@ -11,7 +11,7 @@ import {
 export default function GraphTest() {
   const {
     employeeName,
-  } = useTeamsUser();
+  } = useBetaUser();
 
   const [
     status,

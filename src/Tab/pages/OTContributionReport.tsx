@@ -7,7 +7,7 @@ import {
   getEntries,
 } from "../data";
 
-import useTeamsUser from "../hooks/useTeamsUser";
+import useBetaUser from "../hooks/useBetaUser";
 
 type FilterType =
   | "Today"
@@ -17,7 +17,7 @@ type FilterType =
 export default function OTContributionReport() {
   const {
     employeeName,
-  } = useTeamsUser();
+  } = useBetaUser();
 
   const [
     selectedFilter,

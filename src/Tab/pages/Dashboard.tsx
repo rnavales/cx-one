@@ -18,7 +18,7 @@ import DashboardStats from "../components/DashboardStats";
 import RecentEntries from "../components/RecentEntries";
 import WeeklySummary from "../components/WeeklySummary";
 
-import useTeamsUser from "../hooks/useTeamsUser";
+import useBetaUser from "../hooks/useBetaUser";
 
 type FilterType =
   | "Today"
@@ -92,7 +92,7 @@ function getEndOfWeek(
 export default function Dashboard() {
   const {
     employeeName,
-  } = useTeamsUser();
+  } = useBetaUser();
 
   const [
     entries,

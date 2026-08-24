@@ -15,10 +15,11 @@ import {
   getComplianceRecords,
 } from "../data/compliance";
 
-import useTeamsUser from "../hooks/useTeamsUser";
+import useBetaUser from "../hooks/useBetaUser";
 
 import ComplianceSummary from "../components/ComplianceSummary";
 import ManagerResetTools from "../components/ManagerResetTools";
+
 
 type FilterType =
   | "Today"
@@ -156,7 +157,7 @@ function summarizeHours(
 export default function ManagerDashboard() {
   const {
     employeeName,
-  } = useTeamsUser();
+  } = useBetaUser();
 
   const [
     selectedFilter,

@@ -4,13 +4,8 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   plugins: [react()],
-
-  // GitHub Pages deployment path
-  base: "/cx-one/",
-
+  base: "./",
   esbuild: {
-    tsconfigRaw: fs.readFileSync(
-      "./tsconfig.app.json"
-    ),
+    tsconfigRaw: fs.readFileSync("./tsconfig.app.json"),
   },
 });
