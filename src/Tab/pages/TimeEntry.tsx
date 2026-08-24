@@ -9,7 +9,7 @@ import {
   saveEntry,
 } from "../data";
 
-import useTeamsUser from "../hooks/useTeamsUser";
+import useBetaUser from "../hooks/useBetaUser";
 import { getLastEntry } from "../services/LastEntryService";
 
 import {
@@ -137,7 +137,7 @@ export default function TimeEntry() {
     employeeLogin,
     isLoadingUser,
     userError,
-  } = useTeamsUser();
+  } = useBetaUser();
 
   const [projectKey, setProjectKey] =
     useState("");

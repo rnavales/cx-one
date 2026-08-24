@@ -11,7 +11,7 @@ import type {
   TimeEntry,
 } from "../data";
 
-import useTeamsUser from "../hooks/useTeamsUser";
+import useBetaUser from "../hooks/useBetaUser";
 
 type FilterType =
   | "Today"
@@ -140,7 +140,7 @@ function summarize(
 export default function ProjectUtilization() {
   const {
     employeeName,
-  } = useTeamsUser();
+  } = useBetaUser();
 
   const [
     selectedFilter,
