@@ -6,74 +6,96 @@ import {
 import useTeamsUser from "./useTeamsUser";
 
 export default function useBetaUser() {
-  const {
-    employeeName,
-    employeeLogin,
-  } = useTeamsUser();
-
   const [
     displayName,
     setDisplayName,
   ] = useState("");
 
+  const [
+    login,
+    setLogin,
+  ] = useState("");
+
   useEffect(() => {
-    if (
-      employeeName &&
-      employeeName !==
-        "Unknown User" &&
-      employeeName !==
-        "Loading Teams user..."
-    ) {
-      setDisplayName(
-        employeeName
-      );
+    const runningInsideTeams =
+      window.self !==
+      window.top;
 
-      return;
+    async function loadUser() {
+      if (!runningInsideTeams) {
+        const savedName =
+          localStorage.getItem(
+            "cxone_beta_user"
+          );
+
+        if (
+          savedName &&
+          savedName.trim() !== ""
+        ) {
+          setDisplayName(
+            savedName
+          );
+
+          return;
+        }
+
+        const enteredName =
+          window.prompt(
+            "Beta Testing: Enter your name"
+          );
+
+        if (
+          enteredName &&
+          enteredName.trim() !== ""
+        ) {
+          localStorage.setItem(
+            "cxone_beta_user",
+            enteredName.trim()
+          );
+
+          setDisplayName(
+            enteredName.trim()
+          );
+        }
+
+        return;
+      }
+
+      try {
+        const user =
+          await useTeamsUser();
+
+        if (
+          user.employeeName &&
+          user.employeeName !==
+            "Unknown User"
+        ) {
+          setDisplayName(
+            user.employeeName
+          );
+
+          setLogin(
+            user.employeeLogin ||
+              ""
+          );
+        }
+      } catch {
+        setDisplayName(
+          "Beta User"
+        );
+      }
     }
 
-    const savedName =
-      localStorage.getItem(
-        "cxone_beta_user"
-      );
-
-    if (
-      savedName &&
-      savedName.trim() !== ""
-    ) {
-      setDisplayName(
-        savedName
-      );
-
-      return;
-    }
-
-    const enteredName =
-      window.prompt(
-        "Beta Testing: Enter your name"
-      );
-
-    if (
-      enteredName &&
-      enteredName.trim() !== ""
-    ) {
-      localStorage.setItem(
-        "cxone_beta_user",
-        enteredName.trim()
-      );
-
-      setDisplayName(
-        enteredName.trim()
-      );
-    }
-  }, [
-    employeeName,
-  ]);
+    loadUser();
+  }, []);
 
   return {
     employeeName:
       displayName,
-    employeeLogin,
-    isLoadingUser: false,
+    employeeLogin:
+      login,
+    isLoadingUser:
+      false,
     userError: "",
   };
 }
